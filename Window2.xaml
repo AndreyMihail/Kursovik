@@ -1,0 +1,59 @@
+﻿<Window x:Class="Interface.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interface"
+        mc:Ignorable="d"
+        Height="450" Width="800" WindowStartupLocation="CenterScreen" Style="{StaticResource ClientWindowStyle}">
+    <Grid>
+        <TabControl Style="{StaticResource ClientWindowStyle1}">
+            <TabItem Header="Главная" Style="{StaticResource ClientWindowStyle2}">
+                <StackPanel Margin="10">
+                    
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Мои данные" Style="{StaticResource ClientWindowStyle2}">
+                <StackPanel Margin="10">
+                    <Label Content="Имя"/>
+                    <TextBox Name="ClientNameTextBox" Width="500"/>
+
+                    <Label Content="Фамилия"/>
+                    <TextBox Name="ClientLastNameTextBox" Width="500"/>
+
+                    <Label Content="Электронная почта"/>
+                    <TextBox Name="ClientEmailTextBox" Width="500"/>
+
+                    <Label Content="Телефон"/>
+                    <TextBox Name="ClientPhoneTextBox" Width="500"/>
+
+                    <Button Content="Сохранить изменения" Width="200" Margin="0,10,0,0" />
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Услуги" Style="{StaticResource ClientWindowStyle2}">
+                <StackPanel Margin="10">
+                    <Button Content="Записаться на обслуживание" Width="280"/>
+                    <Button Content="Акции" Width="200"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Мои заказы" Style="{StaticResource ClientWindowStyle2}">
+                <ListView Name="OrdersListView" Margin="10">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Номер заказа" Width="150" DisplayMemberBinding="{Binding OrderNumber}"/>
+                            <GridViewColumn Header="Дата" Width="100" DisplayMemberBinding="{Binding Date}"/>
+                            <GridViewColumn Header="Статус" Width="100" DisplayMemberBinding="{Binding Status}"/>
+                            <GridViewColumn Header="Стоимость" Width="120" DisplayMemberBinding="{Binding Cost}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Отзывы" Style="{StaticResource ClientWindowStyle2}">
+                <StackPanel Margin="10">
+                    <TextBox Name="FeedbackTextBox" Width="500" Height="100" TextWrapping="Wrap" AcceptsReturn="True"/>
+                    <Button Content="Отправить отзыв" Width="200" Margin="0,10,0,0" />
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
